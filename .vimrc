@@ -9,6 +9,7 @@ set history=256 " Number of things to remember in history
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+    Plugin 'altercation/vim-colors-solarized'
     " Fuzzy maching ftw
     Plugin 'kien/ctrlp.vim'
     " Awesome plugin for git
@@ -18,11 +19,9 @@ call vundle#begin()
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-
 " Use Solarized Dark Theme
 set background=dark
 colorscheme solarized
-let g:solarized_termtrans=1
 
 " Search settings
 set hlsearch " highlight search results
