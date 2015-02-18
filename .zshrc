@@ -1,3 +1,6 @@
+# autostart tmux
+ZSH_TMUX_AUTOSTART=true
+
 # load zgen
 source "${HOME}/.zsh/zgen/zgen.zsh"
 
@@ -16,6 +19,7 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/git
     zgen oh-my-zsh plugins/sudo
     zgen oh-my-zsh plugins/command-not-found
+    zgen oh-my-zsh plugins/tmux
 
     # completions
     zgen load zsh-users/zsh-completions src
