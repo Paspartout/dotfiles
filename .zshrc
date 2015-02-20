@@ -1,5 +1,8 @@
-# autostart tmux
-ZSH_TMUX_AUTOSTART=true
+# autostart tmux if launched in ui terminal only
+if [ $TERM = "rxvt-unicode-256color" ] 
+    then
+      ZSH_TMUX_AUTOSTART=true
+fi
 
 # load zgen
 source "${HOME}/.zsh/zgen/zgen.zsh"
@@ -19,6 +22,8 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/git
     zgen oh-my-zsh plugins/sudo
     zgen oh-my-zsh plugins/command-not-found
+    zgen oh-my-zsh plugins/fasd
+    zgen oh-my-zsh plugins/taskwarrior
     zgen oh-my-zsh plugins/tmux
 
     # completions
