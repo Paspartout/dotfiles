@@ -15,7 +15,9 @@ call vundle#begin()
     " Awesome plugin for git
     Plugin 'tpope/vim-fugitive'
     " Nice and light bottom line
-    Plugin 'bling/vim-airline'
+    " Plugin 'bling/vim-airline'
+    " vim plugin for taskwarrior
+    Plugin 'farseer90718/vim-taskwarrior'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
