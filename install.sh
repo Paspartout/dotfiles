@@ -21,3 +21,6 @@ zsh -i -c exit
 
 ## install tmux dotfiles
 ln -sf "$PWD/.tmux.conf" ~/.tmux.conf
+
+## install taskwarrior dotfiles
+ln -sf "$PWD/.taskrc" ~/.taskrc
