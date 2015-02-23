@@ -1,5 +1,6 @@
 # taskwarrior
 alias t='task'
+alias vit='vim +TW'
 
 # vim
 alias v='vim'
