@@ -4,6 +4,9 @@ PWD=`pwd`
 
 ## install vim dotfiles
 rm -rf ~/.vim
+mkdir -p ~/.vim/undos
+mkdir -p ~/.vim/backups
+mkdir -p ~/.vim/swaps
 ln -sf "$PWD/.vimrc" ~/.vimrc
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 git clone git://github.com/altercation/vim-colors-solarized.git ~/.vim/bundle/vim-colors-solarized

@@ -5,6 +5,16 @@
 set nocompatible " No vi compatible mode
 set history=256 " Number of things to remember in history
 
+" Centralize backups, swapfiles and undo history
+set backupdir=~/.vim/backups
+set directory=~/.vim/swaps
+if exists("&undodir")
+    set undodir=~/.vim/undo
+endif
+
+" Don’t create backups when editing files in certain directories
+set backupskip=/tmp/*,/private/tmp/*
+
 " Vundle plugins
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -20,6 +30,10 @@ call vundle#begin()
     Plugin 'farseer90718/vim-taskwarrior'
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+" Settings for vim-taskwarrior
+let g:task_rc_override = 'rc.defaultwidth=0'
+let g:task_rc_override = 'rc.defaultheight=0'
 
 " Use Solarized Dark Theme
 set background=dark
