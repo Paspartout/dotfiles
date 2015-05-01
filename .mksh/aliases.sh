@@ -33,7 +33,7 @@ alias musoff='sudo sispmctl -f 1'
 # inspired and mostly copied form the oh-my-zsh plugin
 alias g='git'
 
-alias g='git status'
+alias gst='git status'
 alias gss='git status -s'
 
 alias gd='git diff'
