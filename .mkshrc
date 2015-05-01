@@ -1,0 +1,62 @@
+# My personal mkshrc file
+#
+# Some things were used from Yamagi's dotfiles. See:
+# https://github.com/Yamagi/dotfiles/blob/master/.mkshrc
+
+# settings
+HISTFILE=~/.mksh_history
+HISTSIZE=8192
+
+# prompt
+GIT_PS1_SHOWDIRTYSTATE=1
+source ~/.git-prompt.sh
+
+function _prompt()
+{
+	typeset dir
+	typeset slashes
+
+	if [[ $PWD == $HOME* ]] ; then
+		dir=${PWD#$HOME}
+		dir=~$dir
+	else
+		dir=$PWD
+	fi
+
+	slashes=${dir//[!\/]/}
+
+	if [[ ${#slashes} -gt 2 ]] ; then
+		while [[ ${#slashes} -gt 1 ]] ; do
+			dir=${dir#*/}
+			slashes=${dir//[!\/]/}
+		done
+
+		dir=...$dir
+	fi
+
+	REPLY="[33m$dir$(__git_ps1)[00m"
+	return 0
+}
+
+PS1='${|_prompt} '
+PS2='> '
+PS3='? '
+PS4='[$EPOCHREALTIME] '
+
+# fasd
+if [ $commands[fasd] ]; then # check if fasd is installed
+	fasd_cache="$HOME/.fasd-init-cache"
+	if [ "$(command -v fasd)" -nt "$fasd_cache" -o ! -s "$fasd_cache" ]; then
+		fasd --init auto >| "$fasd_cache"
+	fi
+	source "$fasd_cache"
+	unset fasd_cache
+	alias j=z
+fi
+
+# source aliases, exports and functions
+# TODO: Consider merging these on install/update into one file
+# TODO: Consider using ~/.profile or ~/.exports as it's indipendent from shell
+source ~/.mksh/aliases.sh
+source ~/.mksh/functions.sh
+source ~/.mksh/exports.sh

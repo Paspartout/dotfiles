@@ -22,12 +22,14 @@ call vundle#begin()
     Plugin 'altercation/vim-colors-solarized'
     " Fuzzy maching ftw
     Plugin 'kien/ctrlp.vim'
+    "
     " Awesome plugin for git
-    Plugin 'tpope/vim-fugitive'
+    " TODO: Include once used
+    " Plugin 'tpope/vim-fugitive'
+    "
     " Nice and light bottom line
+    " TODO: Figure out fonts and include
     " Plugin 'bling/vim-airline'
-    " vim plugin for taskwarrior
-    Plugin 'farseer90718/vim-taskwarrior'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -89,6 +91,3 @@ nnoremap gV `[v`]
 " Custom Leader Shortcuts
 let mapleader="," " leader is comma
 inoremap jk <esc> " map jk to espace
-
-" 
-
