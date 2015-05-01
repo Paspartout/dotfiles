@@ -20,3 +20,7 @@ man() {
     LESS_TERMCAP_us=$'\E[04;38;5;146m' \
     man "$@"
 }
+
+setbacklight() {
+    sudo sh -c "echo $1 > /sys/class/backlight/acpi_video0/brightness"
+}

@@ -7,7 +7,7 @@ alias v='vim'
 
 # tmux
 alias tm='tmux'
-alias tmn'tmux new -s'
+alias tmn='tmux new -s'
 
 # xbps
 alias xi='sudo xbps-install -uy'
