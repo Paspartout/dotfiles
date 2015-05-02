@@ -19,6 +19,7 @@ ln -sf "$PWD/.mkshrc" ~/.mkshrc
 ln -sf "$PWD/.mksh/aliases.sh" ~/.mksh/aliases.sh
 ln -sf "$PWD/.mksh/exports.sh" ~/.mksh/exports.sh
 ln -sf "$PWD/.mksh/functions.sh" ~/.mksh/functions.sh
+ln -sf "$PWD/.mksh/git-prompt.mksh" ~/.mksh/git-prompt.mksh
 
 ## install tmux dotfiles
 ln -sf "$PWD/.tmux.conf" ~/.tmux.conf

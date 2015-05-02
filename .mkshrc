@@ -9,7 +9,7 @@ HISTSIZE=8192
 
 # prompt
 GIT_PS1_SHOWDIRTYSTATE=1
-source ~/.git-prompt.sh
+source ~/.mksh/git-prompt.mksh
 
 function _prompt()
 {
