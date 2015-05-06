@@ -149,3 +149,6 @@ alias gaxfsck='git annex fsck'
 # search for todo in all files but ignore .git
 # TODO: Check posix/sbase compatibility of find -not -path
 alias ftodo='find . -type f -not -path "./.git/*" | xargs grep TODO'
+
+alias timesync='sudo sntp -S de.pool.ntp.org && sudo hwclock -w'
+

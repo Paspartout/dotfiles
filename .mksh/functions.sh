@@ -3,7 +3,7 @@ sc () {
     echo $@ | socat - UNIX-CONNECT:/tmp/spotifyd 2>/dev/null
 }
 
-BEEPFILE=~/.beep.mp3
+BEEPFILE=$HOME/.beep.mp3
 ntfy () {
     notify-send "$1"
     mpv $BEEPFILE
@@ -23,4 +23,9 @@ man() {
 
 setbacklight() {
     sudo sh -c "echo $1 > /sys/class/backlight/acpi_video0/brightness"
+}
+
+DICTFILE=$HOME/Pubs/de-en.tsv
+dictcc() {
+    grep $1 <$DICTFILE | less
 }
