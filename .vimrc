@@ -53,7 +53,6 @@ nnoremap <leader><space> :nohlsearch<CR>
 syntax enable " enable syntax highlighting
 set tabstop=4 " a tab equals 4 spaces
 set softtabstop=4
-set expandtab " turn tabs into spaces
 
 " UI settings
 set number " Show line numbers
