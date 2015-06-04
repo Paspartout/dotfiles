@@ -39,4 +39,20 @@ slformat() {
 	sed -i 's/switch (/switch(/g' $1 # simulate -nsas
 }
 
+muson() {
+	sudo sispmctl -o 1
+	alsactl restore -f $HOME/.alsa/spdif.state
+}
 
+musoff() {
+	sudo sispmctl -f 1
+	alsactl restore -f $HOME/.alsa/default.state
+}
+
+svenable() {
+	sudo ln -s /etc/sv/$1 /var/service/
+}
+
+svdisable() {
+	sudo rm /var/service/$1
+}

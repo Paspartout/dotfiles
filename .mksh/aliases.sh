@@ -26,8 +26,6 @@ alias zzz='sudo zzz'
 # sispmctl
 alias son='sudo sispmctl -o'
 alias soff='sudo sispmctl -off'
-alias muson='sudo sispmctl -o 1'
-alias musoff='sudo sispmctl -f 1'
 
 # git
 # inspired and mostly copied form the oh-my-zsh plugin
@@ -52,6 +50,7 @@ alias gcs='git commit -S'
 
 alias gco='git checkout'
 alias gcm='git checkout master'
+alias gcb='git checkout -b'
 
 alias gr='git remote'
 alias grv='git remote -v'
@@ -95,13 +94,13 @@ alias grt='cd $(git rev-parse --show-toplevel || echo ".")'
 
 # Will return the current branch name
 # Usage example: git pull origin $(current_branch)
-function current_branch() {
+current_branch() {
 	ref=$(git symbolic-ref HEAD 2> /dev/null) || \
 	ref=$(git rev-parse --short HEAD 2> /dev/null) || return
 	echo ${ref#refs/heads/}
 }
 
-function current_repository() {
+current_repository() {
 	ref=$(git symbolic-ref HEAD 2> /dev/null) || \
 	ref=$(git rev-parse --short HEAD 2> /dev/null) || return
 	echo $(git remote -v | cut -d':' -f 2)
@@ -112,9 +111,11 @@ alias ggpull='git pull origin $(current_branch)'
 alias ggpur='git pull --rebase origin $(current_branch)'
 alias ggpush='git push origin $(current_branch)'
 alias ggpnp='git pull origin $(current_branch) && git push origin $(current_branch)'
+# TODO: Check posix compat
+alias gdmm='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
 
 # Pretty log messages
-function _git_log_prettily() {
+_git_log_prettily() {
 	if ! [ -z $1 ]; then
 		git log --pretty=$1
 	fi
@@ -152,3 +153,4 @@ alias ftodo='find . -type f -not -path "./.git/*" | xargs grep TODO'
 
 alias timesync='sudo sntp -S de.pool.ntp.org && sudo hwclock -w'
 
+alias sv='sudo sv'
