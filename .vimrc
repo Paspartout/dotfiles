@@ -62,8 +62,7 @@ set wildmenu " visual autocomplete for command menu
 set lazyredraw " redraw only when we need to
 set showmatch " hight matching {[()}]
 "" Show “invisible” characters
-set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
-set list
+set lcs=trail:·,nbsp:_
 
 " Folding
 set foldenable " enable folding feature

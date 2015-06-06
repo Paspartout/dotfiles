@@ -12,14 +12,16 @@ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 git clone git://github.com/altercation/vim-colors-solarized.git ~/.vim/bundle/vim-colors-solarized
 vim +PluginInstall +qall
 
-## install mksh dotfiles
-rm -rf ~/.mksh
-mkdir ~/.mksh
+## install sh dotfiles
+SHCONFDIR="$HOME/.sh"
+rm -rf $SHCONFDIR
+mkdir $SHCONFDIR
+# TODO: Proablly add rc file for bash
 ln -sf "$PWD/.mkshrc" ~/.mkshrc
-ln -sf "$PWD/.mksh/aliases.sh" ~/.mksh/aliases.sh
-ln -sf "$PWD/.mksh/exports.sh" ~/.mksh/exports.sh
-ln -sf "$PWD/.mksh/functions.sh" ~/.mksh/functions.sh
-ln -sf "$PWD/.mksh/git-prompt.mksh" ~/.mksh/git-prompt.mksh
+ln -sf "$PWD/.sh/aliases.sh" $SHCONFDIR/aliases.sh
+ln -sf "$PWD/.sh/exports.sh" $SHCONFDIR/exports.sh
+ln -sf "$PWD/.sh/functions.sh" $SHCONFDIR/functions.sh
+ln -sf "$PWD/.sh/git-prompt.mksh" $SHCONFDIR/git-prompt.mksh
 
 ## install tmux dotfiles
 ln -sf "$PWD/.tmux.conf" ~/.tmux.conf

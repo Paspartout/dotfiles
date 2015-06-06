@@ -1,5 +1,10 @@
 # aliases I use to be faster on the shell
 
+# navigation shortcuts
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
 # general
 alias history='fc -l'
 

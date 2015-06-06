@@ -9,7 +9,7 @@ HISTSIZE=8192
 
 # prompt
 GIT_PS1_SHOWDIRTYSTATE=1
-source ~/.mksh/git-prompt.mksh
+source ~/.sh/git-prompt.mksh
 
 function _prompt()
 {
@@ -57,6 +57,6 @@ fi
 # source aliases, exports and functions
 # TODO: Consider merging these on install/update into one file
 # TODO: Consider using ~/.profile or ~/.exports as it's indipendent from shell
-source ~/.mksh/aliases.sh
-source ~/.mksh/functions.sh
-source ~/.mksh/exports.sh
+source ~/.sh/aliases.sh
+source ~/.sh/functions.sh
+source ~/.sh/exports.sh
