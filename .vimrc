@@ -19,17 +19,14 @@ set backupskip=/tmp/*,/private/tmp/*
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-    Plugin 'altercation/vim-colors-solarized'
-    " Fuzzy maching ftw
-    Plugin 'kien/ctrlp.vim'
-    "
-    " Awesome plugin for git
-    " TODO: Include once used
-    " Plugin 'tpope/vim-fugitive'
-    "
-    " Nice and light bottom line
-    " TODO: Figure out fonts and include
-    " Plugin 'bling/vim-airline'
+	Plugin 'altercation/vim-colors-solarized'
+	" Fuzzy maching ftw
+	Plugin 'kien/ctrlp.vim'
+	" Go programming helper
+	Plugin 'fatih/vim-go'
+	" Awesome plugin for git
+	" TODO: Include once used
+	" Plugin 'tpope/vim-fugitive'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -61,7 +58,8 @@ set cursorline " highlight current line
 set wildmenu " visual autocomplete for command menu
 set lazyredraw " redraw only when we need to
 set showmatch " hight matching {[()}]
-"" Show “invisible” characters
+
+" Show “invisible” characters on demand by setting list
 set lcs=trail:·,nbsp:_
 
 " Folding

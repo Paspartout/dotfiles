@@ -30,7 +30,7 @@ alias zzz='sudo zzz'
 
 # sispmctl
 alias son='sudo sispmctl -o'
-alias soff='sudo sispmctl -off'
+alias soff='sudo sispmctl -f'
 
 # git
 # inspired and mostly copied form the oh-my-zsh plugin
@@ -46,6 +46,7 @@ alias gdt='git diff-tree --no-commit-id --name-only -r'
 alias gl='git pull'
 alias gup='git pull --rebase'
 alias gp='git push'
+alias gupnp='git pull --rebase && git push'
 
 alias gc='git commit -v'
 alias gc!='git commit -v --amend'

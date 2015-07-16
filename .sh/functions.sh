@@ -25,9 +25,9 @@ setbacklight() {
 	sudo sh -c "echo $1 > /sys/class/backlight/acpi_video0/brightness"
 }
 
-DICTFILE=$HOME/Pubs/de-en.tsv
+DICTFILE=$HOME/.dict.tsv
 dictcc() {
-	grep $1 <$DICTFILE | less
+	grep "$*" <$DICTFILE
 }
 
 # formats code in suckless style
@@ -55,4 +55,8 @@ svenable() {
 
 svdisable() {
 	sudo rm /var/service/$1
+}
+
+sleepm() {
+	sleep $(($1*60))
 }
