@@ -5,8 +5,21 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
-# general
-alias history='fc -l'
+# cd shortcuts
+alias dl="cd $HOME/dl"
+alias tt="cd $HOME/pim/tt"
+alias dev="cd $HOME/dev"
+alias lab="cd $HOME/dev/lab"
+alias pro="cd $HOME/dev/pro"
+alias mus="cd $HOME/mus"
+alias vid="cd $HOME/vid"
+alias img="cd $HOME/img"
+alias wrk="cd $HOME/wrk"
+alias uni="cd $HOME/uni"
+alias pim="cd $HOME/pim"
+alias pubs="cd $HOME/pubs"
+alias docs="cd $HOME/docs"
+alias tmp='cd /tmp'
 
 # TODO: Consider removing color for suckless sbase?
 alias ls='/bin/ls --color'
@@ -91,9 +104,9 @@ alias gclean='git reset --hard && git clean -dfx'
 alias gpoat='git push origin --all && git push origin --tags'
 
 alias gsta='git stash'
-alias gsts='git stash show --text'
-alias gstp='git stash pop'
-alias gstd='git stash drop'
+alias gstas='git stash show --text'
+alias gstap='git stash pop'
+alias gstad='git stash drop'
 
 # Will cd into the top of the current repository or submodule.
 alias grt='cd $(git rev-parse --show-toplevel || echo ".")'
@@ -127,29 +140,6 @@ _git_log_prettily() {
 	fi
 }
 alias glp="_git_log_prettily"
-
-# git annex
-alias gax='git annex'
-alias gaxra='git annex remote add'
-
-alias gaxa='git annex add'
-alias gaxg='git annex get'
-alias gaxd='git annex drop'
-
-alias gaxs='git annex sync'
-alias gaxsc='git annex sync --content'
-
-alias gaxul='git annex unlock'
-alias gaxl='git annex lock'
-
-alias gaxcpto='git annex copy --to'
-alias gaxmvto='git annex move --to'
-
-alias gaxunu='git annex unused'
-alias gaxdun='git annex drop unused'
-alias gaxfsck='git annex fsck'
-
-# TODO: Add more git annex aliases
 
 # utilites / one liners
 
