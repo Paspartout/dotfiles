@@ -20,6 +20,7 @@ alias pim="cd $HOME/pim"
 alias pubs="cd $HOME/pubs"
 alias docs="cd $HOME/docs"
 alias tmp='cd /tmp'
+alias j='cd $(cat /tmp/LDIR)'
 
 # TODO: Consider removing color for suckless sbase?
 alias ls='/bin/ls --color'

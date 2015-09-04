@@ -10,9 +10,11 @@ HISTSIZE=8192
 # prompt
 GIT_PS1_SHOWDIRTYSTATE=1
 source ~/.sh/git-prompt.mksh
+LDIRPATH=/tmp/LDIR
 
 function _prompt()
 {
+	echo $PWD > $LDIRPATH
 	typeset dir
 	typeset slashes
 
@@ -43,17 +45,7 @@ PS2='> '
 PS3='? '
 PS4='[$EPOCHREALTIME] '
 
-# fasd
-if [ $commands[fasd] ]
-then
-	fasd_cache="$HOME/.fasd-init-cache"
-	if [ "$(command -v fasd)" -nt "$fasd_cache" -o ! -s "$fasd_cache" ]; then
-		fasd --init auto >| "$fasd_cache"
-	fi
-	source "$fasd_cache"
-	unset fasd_cache
-	alias j=z
-fi
+test -f $LDIRPATH && cd $(cat $LDIRPATH)
 
 # source aliases, exports and functions
 # TODO: Consider merging these on install/update into one file
