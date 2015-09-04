@@ -52,4 +52,3 @@ test -f $LDIRPATH && cd $(cat $LDIRPATH)
 # TODO: Consider using ~/.profile or ~/.exports as it's indipendent from shell
 source ~/.sh/aliases.sh
 source ~/.sh/functions.sh
-source ~/.sh/exports.sh
