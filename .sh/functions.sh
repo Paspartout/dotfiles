@@ -1,15 +1,3 @@
-# Used for spotifyd
-sc () {
-	echo $@ | socat - UNIX-CONNECT:/tmp/spotifyd 2>/dev/null
-}
-
-BEEPFILE=$HOME/.beep.mp3
-ntfy () {
-	notify-send "$1"
-	mpv $BEEPFILE
-	flite -voice slt -t "$1"
-}
-
 man() {
 	env LESS_TERMCAP_mb=$'\E[01;31m' \
 	LESS_TERMCAP_md=$'\E[01;38;5;74m' \
