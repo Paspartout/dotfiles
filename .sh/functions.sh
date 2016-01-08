@@ -27,6 +27,10 @@ slformat() {
 	sed -i 's/switch (/switch(/g' $1 # simulate -nsas
 }
 
+mkcd() {
+	mkdir -p $1 && cd $1
+}
+
 muson() {
 	sudo sispmctl -o 1
 	alsactl restore -f $HOME/.alsa/spdif.state

@@ -45,7 +45,9 @@ PS2='> '
 PS3='? '
 PS4='[$EPOCHREALTIME] '
 
-test -f $LDIRPATH && cd $(cat $LDIRPATH)
+test -f "$LDIRPATH" && cd "$(cat $LDIRPATH)"
+
+set -o vi vi-tabcomplete
 
 # source aliases, exports and functions
 # TODO: Consider merging these on install/update into one file
