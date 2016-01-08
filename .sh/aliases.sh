@@ -1,36 +1,48 @@
-# aliases I use to be faster on the shell
+# shell independent aliases
 
 # navigation shortcuts
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
+# my folders in ~
+in="$HOME/in"
+tt="$HOME/pim/tt"
+dev="$HOME/dev"
+lab="$HOME/dev/lab"
+pro="$HOME/dev/pro"
+mus="$HOME/mus"
+vid="$HOME/vid"
+img="$HOME/img"
+wrk="$HOME/wrk"
+uni="$HOME/uni"
+pim="$HOME/pim"
+pubs="$HOME/pubs"
+docs="$HOME/docs"
+
 # cd shortcuts
-alias dl="cd $HOME/dl"
-alias tt="cd $HOME/pim/tt"
-alias dev="cd $HOME/dev"
-alias lab="cd $HOME/dev/lab"
-alias pro="cd $HOME/dev/pro"
-alias mus="cd $HOME/mus"
-alias vid="cd $HOME/vid"
-alias img="cd $HOME/img"
-alias wrk="cd $HOME/wrk"
-alias uni="cd $HOME/uni"
-alias pim="cd $HOME/pim"
-alias pubs="cd $HOME/pubs"
-alias docs="cd $HOME/docs"
+alias in="cd $dl"
+alias tt="cd $pim/tt"
+alias dev="cd $dev"
+alias lab="cd $lab"
+alias pro="cd $pro"
+alias mus="cd $mus"
+alias vid="cd $vid"
+alias img="cd $img"
+alias wrk="cd $wrk"
+alias uni="cd $uni"
+alias pim="cd $pim"
+alias pubs="cd $pubs"
+alias docs="cd $docs"
+
 alias tmp='cd /tmp'
 alias j='cd $(cat /tmp/LDIR)'
 
-# TODO: Consider removing color for suckless sbase?
-alias ls='/bin/ls --color'
+# ls
+alias l='ls -l'
 alias la='ls -a'
-alias l='ls -lha'
-
-# tmux
-alias tmux='tmux -2' # default to 256 color mode
-alias tm='tmux'
-alias tmn='tmux new -s'
+alias ld='ls -p | grep /'
+alias lf='ls -p | grep -v /'
 
 # xbps
 # TODO: Add more package managers depending on os?
@@ -40,7 +52,6 @@ alias pkrm='sudo xbps-remove'
 alias pks='xbps-query -Rs'
 
 # voidlinux
-alias zzz='sudo zzz'
 
 # sispmctl
 alias son='sudo sispmctl -o'
@@ -135,12 +146,11 @@ alias ggpnp='git pull origin $(current_branch) && git push origin $(current_bran
 alias gdmm='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
 
 # Pretty log messages
-_git_log_prettily() {
+glp() {
 	if ! [ -z $1 ]; then
 		git log --pretty=$1
 	fi
 }
-alias glp="_git_log_prettily"
 
 # utilites / one liners
 
@@ -148,6 +158,8 @@ alias glp="_git_log_prettily"
 # TODO: Check posix/sbase compatibility of find -not -path
 alias ftodo='find . -type f -not -path "./.git/*" | xargs grep TODO'
 
-alias timesync='sudo sntp -S de.pool.ntp.org && sudo hwclock -w'
+# sudofications
+# TODO: come up with a better way to do this
 
 alias sv='sudo sv'
+alias zzz='sudo zzz'

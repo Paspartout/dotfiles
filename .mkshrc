@@ -9,7 +9,6 @@ HISTSIZE=8192
 
 # prompt
 GIT_PS1_SHOWDIRTYSTATE=1
-source ~/.sh/git-prompt.mksh
 LDIRPATH=/tmp/LDIR
 
 function _prompt()
@@ -36,9 +35,10 @@ function _prompt()
 		dir=...$dir
 	fi
 
-	REPLY="[33m$dir$(__git_ps1)[00m"
+	REPLY="[33m$dir[00m"
 	return 0
 }
+
 
 PS1='${|_prompt} '
 PS2='> '

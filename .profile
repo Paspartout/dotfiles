@@ -7,7 +7,7 @@ export PATH=$PATH:$HOME/bin
 
 # vmtouch if script available
 vmtf=~/.vmtouch
-[ test -x $vmtf ] && $vmtf &
+[ -x $vmtf ] && $vmtf &
 
 if [ -z $SSH_AGENT_PID ]
 then
