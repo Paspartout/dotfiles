@@ -39,7 +39,9 @@ alias tmp='cd /tmp'
 alias j='cd $(cat /tmp/LDIR)'
 
 # ls
-alias l='ls -l'
+alias lc='ls | cols'
+alias l='lc'
+alias ll='ls -l'
 alias la='ls -a'
 alias ld='ls -p | grep /'
 alias lf='ls -p | grep -v /'
