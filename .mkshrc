@@ -5,7 +5,7 @@
 
 # settings
 HISTFILE=~/.mksh_history
-HISTSIZE=8192
+HISTSIZE=50000
 
 # prompt
 GIT_PS1_SHOWDIRTYSTATE=1

@@ -11,6 +11,7 @@ tt="$HOME/pim/tt"
 dev="$HOME/dev"
 lab="$HOME/dev/lab"
 pro="$HOME/dev/pro"
+repos="$HOME/dev/repos"
 mus="$HOME/mus"
 vid="$HOME/vid"
 img="$HOME/img"
@@ -26,6 +27,7 @@ alias tt="cd $pim/tt"
 alias dev="cd $dev"
 alias lab="cd $lab"
 alias pro="cd $pro"
+alias repos="cd $repos"
 alias mus="cd $mus"
 alias vid="cd $vid"
 alias img="cd $img"
@@ -91,7 +93,6 @@ alias grmv='git remote rename'
 alias grrm='git remote remove'
 alias grset='git remote set-url'
 alias grup='git remote update'
-# TODO: Add more remote commands once understood
 
 alias gb='git branch'
 alias gba='git branch -a'
@@ -144,24 +145,4 @@ alias ggpull='git pull origin $(current_branch)'
 alias ggpur='git pull --rebase origin $(current_branch)'
 alias ggpush='git push origin $(current_branch)'
 alias ggpnp='git pull origin $(current_branch) && git push origin $(current_branch)'
-# TODO: Check posix compat
 alias gdmm='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
-
-# Pretty log messages
-glp() {
-	if ! [ -z $1 ]; then
-		git log --pretty=$1
-	fi
-}
-
-# utilites / one liners
-
-# search for todo in all files but ignore .git
-# TODO: Check posix/sbase compatibility of find -not -path
-alias ftodo='find . -type f -not -path "./.git/*" | xargs grep TODO'
-
-# sudofications
-# TODO: come up with a better way to do this
-
-alias sv='sudo sv'
-alias zzz='sudo zzz'
