@@ -1,56 +1,47 @@
-# My personal mkshrc file
+# My personal kshrc file
 #
 # Some things were used from Yamagi's dotfiles. See:
 # https://github.com/Yamagi/dotfiles/blob/master/.mkshrc
 
 # settings
-HISTFILE=~/.mksh_history
+HISTFILE=~/.ksh_history
 HISTSIZE=50000
 
 # prompt
-GIT_PS1_SHOWDIRTYSTATE=1
 LDIRPATH=/tmp/LDIR
 
-function _prompt()
-{
+prompt() {
 	echo $PWD > $LDIRPATH
 	typeset dir
-	typeset slashes
 
-	if [[ $PWD == $HOME* ]] ; then
+	if [[ $PWD == $HOME* ]]
+	then
 		dir=${PWD#$HOME}
 		dir=~$dir
 	else
 		dir=$PWD
 	fi
 
-	slashes=${dir//[!\/]/}
-
-	if [[ ${#slashes} -gt 2 ]] ; then
-		while [[ ${#slashes} -gt 1 ]] ; do
-			dir=${dir#*/}
-			slashes=${dir//[!\/]/}
-		done
-
-		dir=...$dir
+	if [[ ${#dir} -gt 40 ]]
+	then
+		dir="../$(basename $PWD)"
 	fi
 
-	REPLY="[33m$dir[00m"
-	return 0
+	echo "[33m$dir[00m $ "
 }
 
 
-PS1='${|_prompt} '
+PS1='$(prompt)'
 PS2='> '
 PS3='? '
 PS4='[$EPOCHREALTIME] '
-
-test -f "$LDIRPATH" && cd "$(cat $LDIRPATH)"
 
 set -o vi vi-tabcomplete
 
 # source aliases, exports and functions
 # TODO: Consider merging these on install/update into one file
 # TODO: Consider using ~/.profile or ~/.exports as it's indipendent from shell
-source ~/.sh/aliases.sh
-source ~/.sh/functions.sh
+. ~/.sh/aliases.sh
+. ~/.sh/functions.sh
+
+[ -f "$LDIRPATH" ] && cd "$(cat $LDIRPATH)"

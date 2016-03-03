@@ -8,6 +8,6 @@ rm -rf $SHCONFDIR
 mkdir $SHCONFDIR
 ln -f "$PWD/.sh/aliases.sh" $SHCONFDIR/
 ln -f "$PWD/.sh/functions.sh" $SHCONFDIR/
-ln -f "$PWD/.mkshrc" ~/.mkshrc
+ln -f "$PWD/.kshrc" ~/.kshrc
 ln -f "$PWD/.profile" ~/.profile
 

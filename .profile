@@ -2,17 +2,12 @@
 export GOPATH=~/.gocode
 export PATH=$PATH:$GOPATH/bin
 
-# Personal binaries/scripts
-export PATH=$HOME/bin:$PATH
-
-export VIS_THEME=default-16
-
-if [ -z $SSH_AGENT_PID ]
-then
-	eval $(ssh-agent)
-fi
+# Use vis as default editor
 export VISUAL=vis
+export VIS_THEME=default-16
 export EDITOR="$VISUAL"
+
 export PAGER=less
 
-cron -f ~/.crontab &
+export PATH=$HOME/bin:$PATH
+export ENV=$HOME/.kshrc
