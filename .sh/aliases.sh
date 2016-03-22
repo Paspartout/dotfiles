@@ -45,7 +45,7 @@ alias lc='ls | cols'
 alias l='lc'
 alias ll='ls -l'
 alias la='ls -a'
-alias ld='ls -p | grep /'
+alias lsd='ls -p | grep /'
 alias lf='ls -p | grep -v /'
 
 # xbps
@@ -98,7 +98,7 @@ alias gb='git branch'
 alias gba='git branch -a'
 alias gbr='git branch --remote'
 
-alias gcl='git config --list'
+alias gcl='git clone'
 alias gcp='git cherry-pick'
 
 alias glg='git log --stat --max-count=10'
