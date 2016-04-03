@@ -24,7 +24,7 @@ prompt() {
 
 	if [[ ${#dir} -gt 40 ]]
 	then
-		dir=../$(basename '$PWD')
+		dir=../$(basename "$PWD")
 	fi
 
 	echo "[33m$dir[00m $ "
