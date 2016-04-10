@@ -1,13 +1,9 @@
 #!/bin/sh
 
-PWD=`pwd`
+shdir="$HOME/.sh"
+mkdir -p $shdir
 
-## install sh dotfiles
-SHCONFDIR="$HOME/.sh"
-rm -rf $SHCONFDIR
-mkdir $SHCONFDIR
-ln -f "$PWD/.sh/aliases.sh" $SHCONFDIR/
-ln -f "$PWD/.sh/functions.sh" $SHCONFDIR/
+ln -f "$PWD/.sh/aliases.sh" $shdir/
+ln -f "$PWD/.sh/functions.sh" $shdir/
 ln -f "$PWD/.kshrc" ~/.kshrc
 ln -f "$PWD/.profile" ~/.profile
-
