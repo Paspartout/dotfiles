@@ -40,6 +40,13 @@ alias docs="cd $docs"
 alias tmp='cd /tmp'
 alias j='cd $(cat /tmp/LDIR)'
 
+# shortcuts for uni courses
+for c in $uni/courses/*
+do
+	alias $(basename $c)="cd $c"
+done
+
+
 # ls
 alias lc='ls | cols'
 alias l='lc'
