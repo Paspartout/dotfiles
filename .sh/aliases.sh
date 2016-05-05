@@ -153,3 +153,7 @@ alias ggpur='git pull --rebase origin $(current_branch)'
 alias ggpush='git push origin $(current_branch)'
 alias ggpnp='git pull origin $(current_branch) && git push origin $(current_branch)'
 alias gdmm='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
+
+alias gf='git-fat'
+alias gfp='git-fat push'
+alias gfl='git-fat pull'
