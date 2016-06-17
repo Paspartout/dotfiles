@@ -12,4 +12,6 @@ export PAGER=less
 export PATH=$HOME/bin:$PATH
 export ENV=$HOME/.kshrc
 
-[ -z "$SSH_AGENT_PID" ] && eval $(ssh-agent)
+if [ -z "$SSH_AUTH_SOCK" ] ; then
+  eval `ssh-agent -s`
+fi
