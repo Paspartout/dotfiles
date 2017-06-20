@@ -10,6 +10,7 @@ HISTSIZE=50000
 # prompt
 LDIRPATH=/tmp/LDIR
 
+# TODO: fix prompt
 prompt() {
 	echo $PWD > $LDIRPATH
 	typeset dir

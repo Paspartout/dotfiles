@@ -1,9 +1,10 @@
 # shell independent aliases
 
-# navigation shortcuts
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
+#navigation shortcuts
+# doesnt work in mksh anymore :/
+#alias ..='cd ..'
+#alias ...='cd ../..'
+#alias ....='cd ../../..'
 
 # my folders in ~
 in="$HOME/in"
@@ -17,6 +18,7 @@ vid="$HOME/vid"
 img="$HOME/img"
 wrk="$HOME/wrk"
 uni="$HOME/uni"
+unic="$uni/courses"
 pim="$HOME/pim"
 pubs="$HOME/pubs"
 docs="$HOME/docs"
@@ -26,26 +28,18 @@ alias in="cd $dl"
 alias tt="cd $pim/tt"
 alias dev="cd $dev"
 alias lab="cd $lab"
-alias pro="cd $pro"
 alias repos="cd $repos"
 alias mus="cd $mus"
 alias vid="cd $vid"
 alias img="cd $img"
 alias wrk="cd $wrk"
-alias uni="cd $uni"
 alias pim="cd $pim"
 alias pubs="cd $pubs"
 alias docs="cd $docs"
+alias kspdir="cd '/home/paspartout/.local/share/Steam/steamapps/common/Kerbal Space Program'"
 
 alias tmp='cd /tmp'
 alias j='cd $(cat /tmp/LDIR)'
-
-# shortcuts for uni courses
-for c in $uni/courses/*
-do
-	alias $(basename $c)="cd $c"
-done
-
 
 # ls
 alias lc='ls | cols'
@@ -157,3 +151,32 @@ alias gdmm='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
 alias gf='git-fat'
 alias gfp='git-fat push'
 alias gfl='git-fat pull'
+
+# irmote
+
+irp=$HOME/.irmote
+
+vu() {
+	t=1
+
+	[ -n "$1" ] && t=$1
+
+	for i in $(seq 1 $t)
+	do
+		irmote -t $irp/volup
+	done
+}
+
+vd() {
+	t=1
+
+	[ -n "$1" ] && t=$1
+
+	for i in $(seq 1 $t)
+	do
+		irmote -t $irp/voldown
+	done
+}
+
+alias vm="irmote -t $irp/volmute"
+alias vp="irmote -t $irp/power"
