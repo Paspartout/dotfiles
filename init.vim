@@ -23,6 +23,7 @@ nnoremap <leader><space> :nohlsearch<CR>
 syntax enable " enable syntax highlighting
 set tabstop=4 " a tab equals 4 spaces
 set softtabstop=4
+set shiftwidth=4
 
 " UI settings
 "set number " Show line numbers
@@ -31,6 +32,7 @@ set wildmenu " visual autocomplete for command menu
 set lazyredraw " redraw only when we need to
 set showmatch " hight matching {[()}]
 set ruler " show ruler(line and column number bottom right)
+set mouse=a
 
 " Folding
 set foldenable " enable folding feature
@@ -51,7 +53,6 @@ nnoremap E $
 " highlight last inserted text
 nnoremap gV `[v`]
 
-
 " Required:
 set runtimepath+=/home/paspartout/.nvim/dein/repos/github.com/Shougo/dein.vim
 
@@ -70,11 +71,12 @@ if dein#load_state('/home/paspartout/.nvim/dein')
   call dein#add('neomake/neomake')
 
   call dein#add('tpope/vim-fugitive')
-  call dein#add('jlevesy/rust.vim')
-  call dein#add('racer-rust/vim-racer')
   call dein#add('tomvanderlee/vim-kerboscript')
 
   call dein#add('ctrlpvim/ctrlp.vim')
+
+  call dein#add('jlevesy/rust.vim')
+  call dein#add('autozimu/LanguageClient-neovim')
 
   " Currenlty not used: 
   " call dein#add('zah/nim.vim')
@@ -85,6 +87,12 @@ if dein#load_state('/home/paspartout/.nvim/dein')
   call dein#end()
   call dein#save_state()
 endif
+
+" Map CTRL-C and to copy to clipboard
+vnoremap <C-c> "+y
+
+" Nvim terminal mode
+tnoremap <Esc><Esc> <C-\><C-n>
 
 " ================================================================
 " Plugin Configurations
@@ -110,6 +118,11 @@ let g:ctrlp_root_markers = ['Makefile', 'Cargo.toml']
 filetype plugin indent on
 syntax enable
 
-" Nvim terminal mode
-tnoremap <Esc><Esc> <C-\><C-n>
+" LanguageClient
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+    \ }
+
+" Automatically start language servers.
+let g:LanguageClient_autoStart = 1
 
