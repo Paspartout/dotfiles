@@ -11,13 +11,12 @@ export PATH=$HOME/bin:$PATH
 export PATH=$HOME/uni/bin:$PATH
 export PATH=$HOME/opt/julia/bin:$PATH
 
-# Use vis as default editor
-export VISUAL=vis
+# Use vim as default editor
+export VISUAL=vim
 export EDITOR=$VISUAL
-export VIS_PATH=$HOME/.vis/lua
+export VIMRUNTIME=/usr/share/vim/vim80/
 
 export PAGER=less
-
 export ENV=$HOME/.kshrc
 
 # personal deamons/services
@@ -27,4 +26,3 @@ if [ -z "$SSH_AUTH_SOCK" ] ; then
 fi
 
 export XINITRC=/home/paspartout/.xinitrc
-
