@@ -9,7 +9,10 @@ export RUST_SRC_PATH="$HOME/.multirust/toolchains/nightly-x86_64-unknown-linux-g
 # Other PATH adjustments
 export PATH=$HOME/bin:$PATH
 export PATH=$HOME/uni/bin:$PATH
-export PATH=$HOME/opt/julia/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
+
+# Python
+export PYTHONPATH=$PYTHONPATH:$HOME/.local/lib/python3.6
 
 # Use vim as default editor
 export VISUAL=vim

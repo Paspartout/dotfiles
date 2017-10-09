@@ -16,9 +16,11 @@ set incsearch
 
 " Formatting
 syntax enable " enable syntax highlighting
-" TODO: Check how files are formatted
-set tabstop=4 " a tab equals 4 spaces
+" print a tab using 4 spaces
+set tabstop=4
 set softtabstop=4
+set shiftwidth=4
+set listchars=tab:▸\ ,eol:¬
 
 " UI settings
 set showcmd " show command in bottom bar
@@ -40,13 +42,18 @@ set omnifunc=syntaxcomplete#Complete
 " Always display status line
 set laststatus=2
 
+" Automatically indent the right file
+filetype indent on
+
 " ============================== Custom keybinds  =============================
 
 let mapleader=" " " use space as leader
 inoremap jk <esc> " map jk to espace
 nnoremap <leader><space> :nohlsearch<CR>
 nnoremap <leader>n :set number!<CR>
-nnoremap <leader><leader>v :edit $MYVIMRC<CR>
+nnoremap <leader>m :set relativenumber!<CR>
+nnoremap <leader>l :set list!<CR>
+nnoremap <leader><leader>v :tabedit $MYVIMRC<CR>
 nnoremap <leader><leader>r :so $MYVIMRC<CR>
 
 " Movement
@@ -61,22 +68,24 @@ if exists(':tnoremap')
 	tnoremap <Esc><Esc> <C-\><C-n>
 endif
 
+" Enalbe viewing manpages in vim
+runtime ftplugin/man.vim
+
 " ============================== Plugins ======================================
 if exists('*minpac#init')
-	call minpac#init({'verbose' : 3})
+	call minpac#init({"verbose": 3})
 	call minpac#add('k-takata/minpac', {'type': 'opt'})
 
 	" Plugins
 	call minpac#add('ctrlpvim/ctrlp.vim')
-	call minpac#add('tpope/vim-surround')
-	call minpac#add('ervandew/supertab')
-	call minpac#add('tchyny/lightline.vim')
+	call minpac#add('itchyny/lightline.vim')
 	call minpac#add('tpope/vim-fugitive')
-
-	" Optional Plugins
-	call minpac#add('vimwiki/vimwiki', {'type': 'opt'})
+	call minpac#add('tpope/vim-surround')
+	call minpac#add('tpope/vim-commentary')
+	call minpac#add('vimwiki/vimwiki')
 endif
 
+let g:vimwiki_list = [{'path': '~/pim/wiki', 'syntax': 'markdown', 'ext': '.md'}, {'path': '~/uni/wiki', 'syntax': 'markdown', 'ext': '.md'}]
 
 command! PackUpdate packadd minpac | source $MYVIMRC | call minpac#update()
 command! PackClean  packadd minpac | source $MYVIMRC | call minpac#clean()
