@@ -53,8 +53,14 @@ nnoremap <leader><space> :nohlsearch<CR>
 nnoremap <leader>n :set number!<CR>
 nnoremap <leader>m :set relativenumber!<CR>
 nnoremap <leader>l :set list!<CR>
+nnoremap <leader>b :make<CR>
 nnoremap <leader><leader>v :tabedit $MYVIMRC<CR>
 nnoremap <leader><leader>r :so $MYVIMRC<CR>
+
+" fzf.vim mappings
+nnoremap <c-p> :Files<CR>
+" nnoremap ö :Tags<CR>
+" nnoremap ä :Buffers<CR>
 
 " Movement
 nnoremap j gj
@@ -77,12 +83,17 @@ if exists('*minpac#init')
 	call minpac#add('k-takata/minpac', {'type': 'opt'})
 
 	" Plugins
-	call minpac#add('ctrlpvim/ctrlp.vim')
-	call minpac#add('itchyny/lightline.vim')
 	call minpac#add('tpope/vim-fugitive')
 	call minpac#add('tpope/vim-surround')
 	call minpac#add('tpope/vim-commentary')
+	call minpac#add('tpope/vim-repeat')
+	call minpac#add('itchyny/lightline.vim')
+
+	call minpac#add('junegunn/fzf')
+	call minpac#add('junegunn/fzf.vim')
 	call minpac#add('vimwiki/vimwiki')
+	call minpac#add('cocopon/vaffle.vim')
+	call minpac#add('chrisbra/unicode.vim')
 endif
 
 let g:vimwiki_list = [{'path': '~/pim/wiki', 'syntax': 'markdown', 'ext': '.md'}, {'path': '~/uni/wiki', 'syntax': 'markdown', 'ext': '.md'}]

@@ -36,7 +36,6 @@ alias wrk="cd $wrk"
 alias pim="cd $pim"
 alias pubs="cd $pubs"
 alias docs="cd $docs"
-alias kspdir="cd '/home/paspartout/.local/share/Steam/steamapps/common/Kerbal Space Program'"
 
 alias tmp='cd /tmp'
 alias j='cd $(cat /tmp/LDIR)'
@@ -56,12 +55,6 @@ alias pkug='sudo xbps-install -Syu'
 alias pkrm='sudo xbps-remove'
 alias pks='xbps-query -Rs'
 
-# voidlinux
-
-# sispmctl
-alias son='sudo sispmctl -o'
-alias soff='sudo sispmctl -f'
-
 # git
 # inspired and mostly copied form the oh-my-zsh plugin
 alias g='git'
@@ -78,10 +71,10 @@ alias gup='git pull --rebase'
 alias gp='git push'
 alias gupnp='git pull --rebase && git push'
 
-alias gc='git commit -v'
-alias gc!='git commit -v --amend'
-alias gca='git commit -v -a'
-alias gca!='git commit -v -a --amend'
+alias gc='git commit'
+alias gc!='git commit --amend'
+alias gca='git commit -a'
+alias gca!='git commit -a --amend'
 alias gcs='git commit -S'
 
 alias gco='git checkout'
@@ -148,35 +141,3 @@ alias ggpush='git push origin $(current_branch)'
 alias ggpnp='git pull origin $(current_branch) && git push origin $(current_branch)'
 alias gdmm='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
 
-alias gf='git-fat'
-alias gfp='git-fat push'
-alias gfl='git-fat pull'
-
-# irmote
-
-irp=$HOME/.irmote
-
-vu() {
-	t=1
-
-	[ -n "$1" ] && t=$1
-
-	for i in $(seq 1 $t)
-	do
-		irmote -t $irp/volup
-	done
-}
-
-vd() {
-	t=1
-
-	[ -n "$1" ] && t=$1
-
-	for i in $(seq 1 $t)
-	do
-		irmote -t $irp/voldown
-	done
-}
-
-alias vm="irmote -t $irp/volmute"
-alias vp="irmote -t $irp/power"

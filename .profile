@@ -1,3 +1,7 @@
+# Do I really need this here?
+HISTSIZE=
+HISTFILESIZE=
+
 # Go
 export GOPATH=~/.gocode
 export PATH=$PATH:$GOPATH/bin
@@ -10,6 +14,8 @@ export RUST_SRC_PATH="$HOME/.multirust/toolchains/nightly-x86_64-unknown-linux-g
 export PATH=$HOME/bin:$PATH
 export PATH=$HOME/uni/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
+
+export ANDROID_HOME=$HOME/Android
 
 # Python
 export PYTHONPATH=$PYTHONPATH:$HOME/.local/lib/python3.6
