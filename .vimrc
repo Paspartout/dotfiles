@@ -59,8 +59,8 @@ nnoremap <leader><leader>r :so $MYVIMRC<CR>
 
 " fzf.vim mappings
 nnoremap <c-p> :Files<CR>
-" nnoremap ö :Tags<CR>
-" nnoremap ä :Buffers<CR>
+nnoremap <c-t> :Tags<CR>
+nnoremap <c-b> :Buffers<CR>
 
 " Movement
 nnoremap j gj

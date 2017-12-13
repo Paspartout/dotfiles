@@ -23,7 +23,6 @@ export PYTHONPATH=$PYTHONPATH:$HOME/.local/lib/python3.6
 # Use vim as default editor
 export VISUAL=vim
 export EDITOR=$VISUAL
-export VIMRUNTIME=/usr/share/vim/vim80/
 
 export PAGER=less
 export ENV=$HOME/.kshrc
