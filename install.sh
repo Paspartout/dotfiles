@@ -11,16 +11,23 @@ ln -f "$PWD/.profile" ~/.profile
 ln -f "$PWD/.tmux.conf" ~/.tmux.conf
 ln -f "$PWD/.vimrc" ~/.vimrc
 
-# install minpac
-minpacdir="$HOME/.vim/pack/minpac"
-if [ -d $minpacdir ]
-then
-	echo "$minpacdir already exists, skipping minpac installation"
-else
-	echo "installing minpac"
-	mkdir -p ~/.vim/pack/minpac/opt
-	git clone https://github.com/k-takata/minpac.git ~/.vim/pack/minpac/opt/minpac
-fi
+# install minpac for vim
+
+install_minpac() {
+	if [ -d "$1" ]
+	then
+		echo "$1 already exists, skipping minpac installation"
+	else
+		echo "installing minpac"
+		mkdir -p $(dirname "$1")
+		git clone https://github.com/k-takata/minpac.git "$1"
+	fi
+}
+
+vim_minpacdir="$HOME/.vim/pack/minpac"
+nvim_minpacdir="$HOME/.config/nvim/pack/minpac/opt/minpac"
+install_minpac $vim_minpacdir
+install_minpac $nvim_minpacdir
 
 # make neovim compatible with my vimrc
 mkdir -p ~/.config/nvim
