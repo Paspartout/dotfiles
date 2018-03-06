@@ -25,7 +25,6 @@ docs="$HOME/docs"
 
 # cd shortcuts
 alias in="cd $dl"
-alias tt="cd $pim/tt"
 alias dev="cd $dev"
 alias lab="cd $lab"
 alias repos="cd $repos"

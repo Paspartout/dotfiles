@@ -7,6 +7,10 @@ if exists('*minpac#init')
 	call minpac#add('Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' })
 	call minpac#add('Shougo/neosnippet.vim')
 	call minpac#add('Shougo/neosnippet-snippets')
+	call minpac#add('zchee/deoplete-jedi')
+	call minpac#add('fatih/vim-go')
+	call minpac#add('zchee/deoplete-go', {'do': 'make'})
+	call minpac#add('neomake/neomake')
 endif
 
 let g:LanguageClient_serverCommands = {
@@ -26,4 +30,9 @@ xmap <C-k>     <Plug>(neosnippet_expand_target)
 nnoremap <silent> ö :call LanguageClient_textDocument_hover()<CR>
 nnoremap <silent> gh :call LanguageClient_textDocument_definition()<CR>
 nnoremap <silent> gr :call LanguageClient_textDocument_rename()<CR>
+
+let g:deoplete#sources#jedi#python_path = '/usr/bin/python3'
+
+let g:go_fmt_command = "goimports"
+autocmd FileType go :call neomake#configure#automake('nw', 750)
 
