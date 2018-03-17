@@ -22,6 +22,7 @@ unic="$uni/courses"
 pim="$HOME/pim"
 pubs="$HOME/pubs"
 docs="$HOME/docs"
+gop="$GOPATH"
 
 # cd shortcuts
 alias in="cd $dl"
@@ -35,6 +36,7 @@ alias wrk="cd $wrk"
 alias pim="cd $pim"
 alias pubs="cd $pubs"
 alias docs="cd $docs"
+alias gop="cd $GOPATH"
 
 alias tmp='cd /tmp'
 alias j='cd $(cat /tmp/LDIR)'
