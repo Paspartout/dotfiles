@@ -8,7 +8,6 @@ if exists('*minpac#init')
 	call minpac#add('Shougo/neosnippet.vim')
 	call minpac#add('Shougo/neosnippet-snippets')
 	call minpac#add('zchee/deoplete-jedi')
-	call minpac#add('fatih/vim-go')
 	call minpac#add('zchee/deoplete-go', {'do': 'make'})
 	call minpac#add('neomake/neomake')
 endif
@@ -36,10 +35,7 @@ xmap <C-k>     <Plug>(neosnippet_expand_target)
 " neomake
 let g:neomake_python_enabled_makers = ['pyflakes']
 let g:neomake_go_gometalinter_args = ['--fast']
-autocmd FileType go :call neomake#configure#automake('nw', 0)
-autocmd FileType python :call neomake#configure#automake('nw', 0)
 
-
-" vim-go
-let g:go_fmt_command = "goimports"
+autocmd FileType go :call neomake#configure#automake('w')
+autocmd FileType python :call neomake#configure#automake('nw', 250)
 

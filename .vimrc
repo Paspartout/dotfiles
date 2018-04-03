@@ -29,6 +29,7 @@ set lazyredraw " redraw only when we need to
 set showmatch " hight matching {[()}]
 set ruler " show ruler(line and column number bottom right)
 set mouse=a " use mouse if possible
+set background=dark " my terminal is using a dark background
 
 " Folding
 set foldenable " enable folding feature
@@ -69,6 +70,10 @@ nnoremap k gk
 " Ctrl-C copies to system clipboard
 vnoremap <C-c> "+y
 
+" Use gn and gp vor navigating quickfix list
+nnoremap gn :cnext<cr>
+nnoremap gp :cprev<cr>
+
 " Escape terminal using <Esc><Esc>
 if exists(':tnoremap')
 	tnoremap <Esc><Esc> <C-\><C-n>
@@ -88,15 +93,21 @@ if exists('*minpac#init')
 	call minpac#add('tpope/vim-commentary')
 	call minpac#add('tpope/vim-repeat')
 	call minpac#add('itchyny/lightline.vim')
-
 	call minpac#add('junegunn/fzf')
 	call minpac#add('junegunn/fzf.vim')
 	call minpac#add('vimwiki/vimwiki')
 	call minpac#add('cocopon/vaffle.vim')
 	call minpac#add('chrisbra/unicode.vim')
+	call minpac#add('fatih/vim-go')
 endif
 
-let g:vimwiki_list = [{'path': '~/pim/wiki', 'syntax': 'markdown', 'ext': '.md'}, {'path': '~/uni/wiki', 'syntax': 'markdown', 'ext': '.md'}]
+" Plugin configurations
 
 command! PackUpdate packadd minpac | source $MYVIMRC | call minpac#update()
 command! PackClean  packadd minpac | source $MYVIMRC | call minpac#clean()
+
+" vimwiki
+let g:vimwiki_list = [{'path': '~/pim/wiki', 'syntax': 'markdown', 'ext': '.md'}, {'path': '~/uni/wiki', 'syntax': 'markdown', 'ext': '.md'}]
+
+" vim-go
+let g:go_fmt_command = "goimports"
