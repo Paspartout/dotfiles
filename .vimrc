@@ -62,6 +62,7 @@ nnoremap <leader><leader>r :so $MYVIMRC<CR>
 nnoremap <c-p> :Files<CR>
 nnoremap <c-t> :Tags<CR>
 nnoremap <c-b> :Buffers<CR>
+nnoremap <c-h> :History<CR>
 
 " Movement
 nnoremap j gj
@@ -99,6 +100,7 @@ if exists('*minpac#init')
 	call minpac#add('cocopon/vaffle.vim')
 	call minpac#add('chrisbra/unicode.vim')
 	call minpac#add('fatih/vim-go')
+	call minpac#add('sedm0784/vim-you-autocorrect')
 endif
 
 " Plugin configurations
@@ -111,3 +113,6 @@ let g:vimwiki_list = [{'path': '~/pim/wiki', 'syntax': 'markdown', 'ext': '.md'}
 
 " vim-go
 let g:go_fmt_command = "goimports"
+autocmd FileType go nmap <leader>b  <Plug>(go-build)
+autocmd FileType go nmap <leader>r  <Plug>(go-run)
+autocmd FileType go nmap <leader>t  <Plug>(go-test)
