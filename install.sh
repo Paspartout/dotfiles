@@ -11,8 +11,11 @@ ln -f "$PWD/.profile" ~/.profile
 ln -f "$PWD/.tmux.conf" ~/.tmux.conf
 ln -f "$PWD/.vimrc" ~/.vimrc
 
-# install minpac for vim
+# install fzf
+git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf
+$HOME/.fzf/install
 
+# install minpac for vim
 install_minpac() {
 	if [ -d "$1" ]
 	then
@@ -32,4 +35,3 @@ install_minpac $nvim_minpacdir
 # make neovim compatible with my vimrc
 mkdir -p ~/.config/nvim
 ln -f "$PWD/init.vim" ~/.config/nvim/init.vim
-

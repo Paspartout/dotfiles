@@ -25,7 +25,8 @@ export VISUAL=vim
 export EDITOR=$VISUAL
 
 export PAGER=less
-export ENV=$HOME/.kshrc
+# TODO: Bash?
+#export ENV=$HOME/.kshrc
 
 # personal deamons/services
 # TODO: consider running user runit
@@ -33,4 +34,11 @@ if [ -z "$SSH_AUTH_SOCK" ] ; then
 	eval "$(ssh-agent -s)"
 fi
 
-export XINITRC=/home/paspartout/.xinitrc
+# if running bash
+if [ -n "$BASH_VERSION" ]; then
+    # include .bashrc if it exists
+    if [ -f "$HOME/.bashrc" ]; then
+	. "$HOME/.bashrc"
+    fi
+fi
+
