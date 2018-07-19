@@ -22,6 +22,7 @@ unic="$uni/courses"
 pim="$HOME/pim"
 pubs="$HOME/pubs"
 docs="$HOME/docs"
+jw="$docs/jw"
 gop="$GOPATH"
 
 # cd shortcuts
@@ -36,10 +37,8 @@ alias wrk="cd $wrk"
 alias pim="cd $pim"
 alias pubs="cd $pubs"
 alias docs="cd $docs"
+alias jw="cd $jw"
 alias gop="cd $GOPATH"
-
-alias tmp='cd /tmp'
-alias j='cd $(cat /tmp/LDIR)'
 
 # ls
 alias lc='ls | cols'
@@ -48,13 +47,6 @@ alias ll='ls -l'
 alias la='ls -a'
 alias lsd='ls -p | grep /'
 alias lf='ls -p | grep -v /'
-
-# xbps
-# TODO: Add more package managers depending on os?
-alias pkin='sudo xbps-install -uy'
-alias pkug='sudo xbps-install -Syu'
-alias pkrm='sudo xbps-remove'
-alias pks='xbps-query -Rs'
 
 # git
 # inspired and mostly copied form the oh-my-zsh plugin
