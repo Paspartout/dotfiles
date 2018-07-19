@@ -18,6 +18,10 @@ export PATH=$HOME/bin:$PATH
 export PATH=$HOME/uni/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 
+# Use ccache if available
+ccache_path="/usr/lib/ccache"
+[ -d "$ccache_path" ] && export PATH="$ccache_path:$PATH"
+
 export ANDROID_HOME=$HOME/Android
 
 # Use vim as default editor

@@ -116,3 +116,6 @@ let g:go_fmt_command = "goimports"
 autocmd FileType go nmap <leader>b  <Plug>(go-build)
 autocmd FileType go nmap <leader>r  <Plug>(go-run)
 autocmd FileType go nmap <leader>t  <Plug>(go-test)
+
+" python
+autocmd FileType python nmap <leader>r :exec '!python3' shellescape(@%, 1)<cr>
