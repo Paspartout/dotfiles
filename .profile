@@ -13,15 +13,23 @@ export RUST_SRC_PATH="$HOME/.multirust/toolchains/nightly-x86_64-unknown-linux-g
 # Python
 export PYTHONPATH=$PYTHONPATH:$HOME/.local/lib/python3.6
 
+# Nim
+export PATH=/home/paspartout/.nimble/bin:$PATH
+
+# Zig
+export PATH=/home/paspartout/bin/zig-linux-x86_64-0.5.0:$PATH
+
 # Other PATH adjustments
 export PATH=$HOME/bin:$PATH
 export PATH=$HOME/uni/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
+export PATH=/usr/local/xtensa-esp32-elf/bin:$PATH
 
 # Use ccache if available
 ccache_path="/usr/lib/ccache"
 [ -d "$ccache_path" ] && export PATH="$ccache_path:$PATH"
 
+export IDF_PATH=/home/paspartout/dev/repos/esp-idf
 export ANDROID_HOME=$HOME/Android
 
 # Use vim as default editor
@@ -31,6 +39,7 @@ export EDITOR=$VISUAL
 export PAGER=less
 # TODO: Bash?
 #export ENV=$HOME/.kshrc
+
 
 # personal deamons/services
 # TODO: consider running user runit
@@ -45,4 +54,3 @@ if [ -n "$BASH_VERSION" ]; then
 	. "$HOME/.bashrc"
     fi
 fi
-

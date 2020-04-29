@@ -14,8 +14,13 @@ ln -f "$PWD/.tmux.conf" ~/.tmux.conf
 ln -f "$PWD/.vimrc" ~/.vimrc
 
 # install fzf
-git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf
-$HOME/.fzf/install
+if [ -d "$HOME/.fzf" ]
+then
+	echo "$HOME/.fzf already exists, skipping fzf installation"
+else
+	git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf
+	$HOME/.fzf/install
+fi
 
 # install minpac for vim
 install_minpac() {

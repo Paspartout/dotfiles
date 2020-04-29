@@ -3,28 +3,19 @@ source ~/.vimrc
 
 " Add neovim only plugins
 if exists('*minpac#init')
-	call minpac#add('Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' })
+	" call minpac#add('Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' })
 	call minpac#add('Shougo/neosnippet.vim')
 	call minpac#add('Shougo/neosnippet-snippets')
-	call minpac#add('zchee/deoplete-jedi')
-	call minpac#add('zchee/deoplete-go', {'do': 'make'})
+	" call minpac#add('tbodt/deoplete-tabnine')
 	call minpac#add('neomake/neomake')
+	call minpac#add('neoclide/coc.nvim')
 endif
 
-" language client
-nnoremap <silent> ö :call LanguageClient_textDocument_hover()<CR>
-nnoremap <silent> gh :call LanguageClient_textDocument_definition()<CR>
-nnoremap <silent> gr :call LanguageClient_textDocument_rename()<CR>
-
-let g:LanguageClient_serverCommands = {
-    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
-    \ }
-let g:LanguageClient_autoStart = 0
-let g:LanguageClient_loadSettings = 1
-
-" deoplete enalbe omni completion
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#sources#jedi#python_path = '/usr/bin/python3'
+" coc.nvim
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
 " neosnippet
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)

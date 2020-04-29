@@ -99,10 +99,12 @@ if exists('*minpac#init')
 	call minpac#add('vimwiki/vimwiki')
 	call minpac#add('cocopon/vaffle.vim')
 	call minpac#add('chrisbra/unicode.vim')
-	call minpac#add('fatih/vim-go')
+	" call minpac#add('fatih/vim-go')
 	call minpac#add('sedm0784/vim-you-autocorrect')
+	call minpac#add('vim-scripts/TaskList.vim')
+	call minpac#add('airblade/vim-gitgutter')
 endif
-
+let g:go_version_warning = 0
 " Plugin configurations
 
 command! PackUpdate packadd minpac | source $MYVIMRC | call minpac#update()
@@ -116,6 +118,11 @@ let g:go_fmt_command = "goimports"
 autocmd FileType go nmap <leader>b  <Plug>(go-build)
 autocmd FileType go nmap <leader>r  <Plug>(go-run)
 autocmd FileType go nmap <leader>t  <Plug>(go-test)
+
+autocmd FileType c nmap <leader>r  :make run<cr>
+
+nmap <leader>, :cnext<cr>
+nmap <leader>. :cprev<cr>
 
 " python
 autocmd FileType python nmap <leader>r :exec '!python3' shellescape(@%, 1)<cr>

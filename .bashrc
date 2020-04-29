@@ -89,3 +89,8 @@ set -o vi
 
 # source fzf.bash if installed
 [ -f ~/.fzf.bash ] && . ~/.fzf.bash
+
+# use thefuck if present as fix
+command -v thefuck &>/dev/null && eval $(thefuck --alias fix)
+
+complete -W "on off scene brightness" hue
