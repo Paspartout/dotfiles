@@ -7,23 +7,18 @@ export GOPATH=$HOME/dev/go
 export PATH=$PATH:$GOPATH/bin
 
 # Rust
-export PATH="$HOME/.cargo/bin:$PATH"
-export RUST_SRC_PATH="$HOME/.multirust/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
-
-# Python
-export PYTHONPATH=$PYTHONPATH:$HOME/.local/lib/python3.6
+# export PATH="$HOME/.cargo/bin:$PATH"
+# export RUST_SRC_PATH="$HOME/.multirust/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
+# # Python
+# export PYTHONPATH=$PYTHONPATH:$HOME/.local/lib/python3.6
 
 # Nim
 export PATH=/home/paspartout/.nimble/bin:$PATH
-
-# Zig
-export PATH=/home/paspartout/bin/zig-linux-x86_64-0.5.0:$PATH
 
 # Other PATH adjustments
 export PATH=$HOME/bin:$PATH
 export PATH=$HOME/uni/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
-export PATH=/usr/local/xtensa-esp32-elf/bin:$PATH
 
 # Use ccache if available
 ccache_path="/usr/lib/ccache"

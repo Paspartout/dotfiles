@@ -22,7 +22,9 @@ else
 	$HOME/.fzf/install
 fi
 
+# VIM
 # install minpac for vim
+# TODO: Maybe remove/depricate good old vim?
 install_minpac() {
 	if [ -d "$1" ]
 	then
@@ -33,12 +35,15 @@ install_minpac() {
 		git clone https://github.com/k-takata/minpac.git "$1"
 	fi
 }
-
 vim_minpacdir="$HOME/.vim/pack/minpac"
-nvim_minpacdir="$HOME/.config/nvim/pack/minpac/opt/minpac"
 install_minpac $vim_minpacdir
-install_minpac $nvim_minpacdir
 
+# NVIM
 # make neovim compatible with my vimrc
 mkdir -p ~/.config/nvim
-ln -f "$PWD/init.vim" ~/.config/nvim/init.vim
+ln -f "$PWD/init.lua" ~/.config/nvim/init.lua
+
+git clone --depth=1 https://github.com/savq/paq-nvim.git \
+    "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/pack/paqs/start/paq-nvim
+
+
